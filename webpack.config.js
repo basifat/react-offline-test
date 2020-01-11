@@ -40,7 +40,31 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 use: 'file-loader?name=img/[name]-[hash:6].[ext]',
-            }
+            },
+            {
+                test: /\.css$/i,
+                exclude: /node_modules/,
+                use: [
+                  'style-loader',
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: true,
+                    },
+                  },
+                ],
+              },
+              {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  // Creates `style` nodes from JS strings
+                  'style-loader',
+                  // Translates CSS into CommonJS
+                  'css-loader',
+                  // Compiles Sass to CSS
+                  'sass-loader',
+                ],
+              },
         ]
     },
     plugins: [
