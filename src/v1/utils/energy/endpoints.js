@@ -1,0 +1,1 @@
+export const ENDPOINT = 'https://api.carbonintensity.org.uk/generation'
