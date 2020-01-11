@@ -1,7 +1,13 @@
 import React from 'react';
+import { EnergyCharts } from './v1';
 
-const App = () => <h1>UK Energy Mix</h1>;
+const errorMessage = 'Sorry something went wrong please try later...'
+const loaderMessage = 'Loading Chart ...'
 
-export {
-    App
-}
+export const App = () => 
+          <div className="App">
+               <EnergyCharts 
+                         errorMessage={errorMessage} 
+                         loaderMessage={loaderMessage} 
+               />
+          </div>
